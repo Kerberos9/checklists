@@ -38,6 +38,13 @@ export default class Checklist extends Component {
                       {removeMd(s.text)}
                     </h1>
                   );
+                } else if (s.text.substr(0, 3) === '![]') {
+                  return (
+                    <img
+                      src={s.text.split('(')[1].split(')')[0]}
+                      alt='Markdown'
+                    />
+                  );
                 } else {
                   return (
                     <p
