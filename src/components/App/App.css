@@ -1,0 +1,28 @@
+.checklist-import-inputs {
+  display: grid;
+  grid-template-columns: 5em 10em;
+  grid-template-rows: 2em 2em;
+  grid-gap: 5px;
+  width: 50px;
+}
+
+.checklist-selection {
+  margin-top: 50px;
+  position: relative;
+}
+
+body {
+  background-color: #272727;
+  color: #fff;
+}
+
+input,
+button,
+textarea,
+select {
+  background-color: #bb86fc;
+}
+
+h2 {
+  color: #bb86fc;
+}
