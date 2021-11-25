@@ -4,10 +4,11 @@
   grid-template-rows: 2em 2em;
   grid-gap: 5px;
   width: 50px;
+  line-height: 20px;
 }
 
 .checklist-selection {
-  margin-top: 50px;
+  margin-top: 20px;
   position: relative;
 }
 
@@ -22,8 +23,15 @@ button,
 textarea,
 select {
   background-color: #bb86fc;
+  border-radius: 5px;
+  border: 0;
 }
 
 h2 {
   color: #bb86fc;
+}
+
+select {
+  width: 12em;
+  text-align: center;
 }

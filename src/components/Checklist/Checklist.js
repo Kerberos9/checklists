@@ -7,6 +7,14 @@ export default class Checklist extends Component {
     this.props.updateStep(i);
   };
 
+  prepareText = text => {
+    let preparedText = removeMd(text);
+    preparedText = preparedText.replace('\\*', '*');
+    if (preparedText[0] === '-') {
+      preparedText = preparedText.substr(1);
+    }
+    return preparedText;
+  };
   render() {
     return (
       <div className='checklist'>
@@ -24,7 +32,7 @@ export default class Checklist extends Component {
                       }`}
                       key={i}
                       onClick={e => this.toggleStep(e, i)}>
-                      {removeMd(s.text)}
+                      {this.prepareText(s.text)}
                     </h3>
                   );
                 } else if (s.text.substr(0, 1) === '#') {
@@ -35,7 +43,7 @@ export default class Checklist extends Component {
                       }`}
                       key={i}
                       onClick={e => this.toggleStep(e, i)}>
-                      {removeMd(s.text)}
+                      {this.prepareText(s.text)}
                     </h1>
                   );
                 } else if (s.text.substr(0, 3) === '![]') {
@@ -43,6 +51,7 @@ export default class Checklist extends Component {
                     <img
                       src={s.text.split('(')[1].split(')')[0]}
                       alt='Markdown'
+                      key={i}
                     />
                   );
                 } else {
@@ -53,7 +62,7 @@ export default class Checklist extends Component {
                       }`}
                       key={i}
                       onClick={e => this.toggleStep(e, i)}>
-                      {removeMd(s.text)}
+                      {this.prepareText(s.text)}
                     </p>
                   );
                 }
