@@ -5,7 +5,9 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      checklists: JSON.parse(localStorage.getItem('checklists')) || [],
+      checklists: JSON.parse(localStorage.getItem('checklists')) || [
+        { title: 'None', steps: [] }
+      ],
       currentChecklist: localStorage.getItem('currentChecklist') || null
     };
   }

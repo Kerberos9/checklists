@@ -9,7 +9,7 @@ export default class Checklist extends Component {
 
   prepareText = text => {
     let preparedText = removeMd(text);
-    preparedText = preparedText.replace('\\*', '*');
+    preparedText = preparedText.replace('\\', '');
     if (preparedText[0] === '-') {
       preparedText = preparedText.substr(1);
     }
